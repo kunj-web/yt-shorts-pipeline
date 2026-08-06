@@ -1,0 +1,3 @@
+# One YouTube URL per line. Lines starting with # are ignored.
+# Only add URLs for videos you have explicit permission to clip and repost.
+https://youtu.be/r1ZBiCpZNIs?si=SOvh9v9qnH0hN7zE
