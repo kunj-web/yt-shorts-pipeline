@@ -1,0 +1,22 @@
+download:
+  max_height: 1080
+  output_dir: /kaggle/working/raw
+
+transcription:
+  model_size: medium
+  device: cuda
+  compute_type: float16
+  output_dir: /kaggle/working/transcripts
+
+clip_selection:
+  min_clip_seconds: 30
+  max_clip_seconds: 90
+  clips_per_video: 3
+
+render:
+  aspect_ratio: "9:16"
+  caption_style: word_by_word
+  output_dir: /kaggle/working/clips
+
+cleanup:
+  delete_raw_after_render: true
