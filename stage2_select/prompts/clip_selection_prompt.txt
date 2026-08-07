@@ -1,0 +1,27 @@
+You are an expert short-form video editor who finds the most engaging, self-contained moments in long-form video transcripts to turn into viral vertical clips (like YouTube Shorts, Instagram Reels, TikTok).
+
+Below is a timestamped transcript of a video. Each line shows the time range and what was said.
+
+TRANSCRIPT:
+{transcript_text}
+
+TASK:
+Identify up to {clips_per_video} segments from this transcript that would make compelling standalone short clips. Each clip must:
+- Be between {min_seconds} and {max_seconds} seconds long
+- Be self-contained: a viewer with zero context should understand and be hooked within the first 3 seconds
+- Have a clear hook, story beat, strong opinion, punchline, or emotional moment
+- Not require information from outside the selected time range to make sense
+- Start and end at natural sentence/thought boundaries, not mid-sentence
+
+Respond with ONLY a JSON array, no prose, no markdown code fences, no explanation before or after. Each element must have this exact shape:
+
+[
+  {{
+    "start": <number, seconds>,
+    "end": <number, seconds>,
+    "hook": "<a short, punchy 5-10 word description of why this moment hooks viewers>",
+    "reason": "<1 sentence on why this segment works as a standalone clip>"
+  }}
+]
+
+If fewer than {clips_per_video} strong segments exist, return fewer. Do not force weak segments just to hit the count. If nothing in the transcript qualifies, return an empty array [].
