@@ -1,0 +1,137 @@
+# =========================
+# Python
+# =========================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# Virtual Environment
+# =========================
+
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================
+# Environment Variables / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# Testing / Coverage
+# =========================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# =========================
+# Type Checkers / Linters
+# =========================
+
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# =========================
+# Build / Packaging
+# =========================
+
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# =========================
+# IDEs / Editors
+# =========================
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+.idea/
+*.iml
+
+# =========================
+# Jupyter
+# =========================
+
+.ipynb_checkpoints/
+
+# =========================
+# OS Files
+# =========================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# =========================
+# Logs
+# =========================
+
+*.log
+logs/
+
+# =========================
+# Database
+# =========================
+
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Temporary Files
+# =========================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# =========================
+# Local Uploads / Generated Files
+# =========================
+
+uploads/
+media/
+tmp/
+temp/
+
+# =========================
+# Secrets / Credentials
+# =========================
+
+*.pem
+*.key
+*.crt
+credentials.json
+service-account.json
