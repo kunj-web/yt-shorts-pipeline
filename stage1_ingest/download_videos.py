@@ -5,10 +5,14 @@ Reads a list of YouTube URLs from config/videos.txt and downloads each
 at a capped resolution (1080p) into the working output directory.
 
 Usage:
-    python download_videos.py --input ../config/videos.txt --output /kaggle/working/raw
+    python download_videos.py --input ../config/videos.txt --output /kaggle/working/raw --cookies /path/to/cookies.txt
 
 Requires creator permission to be secured for every URL in videos.txt --
 this script does not check licensing, that's on the operator.
+
+Note: requires a JS runtime (deno) to be installed for YouTube's signature
+challenge to solve correctly on headless/cloud environments like Kaggle.
+Install with: curl -fsSL https://deno.land/install.sh | sh -s -- -y
 """
 
 import argparse
@@ -50,6 +54,10 @@ def download_videos(input_file: str, output_dir: str, max_height: int = 1080, co
     if cookies_file:
         cmd += ["--cookies", cookies_file]
 
+    # Required for YouTube's JS signature challenge -- Kaggle/cloud environments
+    # need this explicit remote component since no browser JS runtime is present.
+    cmd += ["--remote-components", "ejs:github"]
+
     print(f"[INFO] Running: {' '.join(cmd)}")
     result = subprocess.run(cmd, capture_output=True, text=True)
 
@@ -80,6 +88,8 @@ def download_from_channel(channel_url: str, output_dir: str, latest_n: int = 10,
 
     if cookies_file:
         cmd += ["--cookies", cookies_file]
+
+    cmd += ["--remote-components", "ejs:github"]
 
     print(f"[INFO] Pulling latest {latest_n} videos from {channel_url}")
     result = subprocess.run(cmd, capture_output=True, text=True)
