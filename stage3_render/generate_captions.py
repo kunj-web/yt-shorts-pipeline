@@ -2,6 +2,9 @@
 Stage 3b: Caption generation -- builds an ASS subtitle file with word-by-word
 sync, driven by Whisper's word-level timestamps from Stage 1.
 
+Style: average-sized bold yellow text with a thick black outline for strong
+contrast against any background footage.
+
 Usage:
     python generate_captions.py \
         --transcript ../stage1_ingest/test_transcripts/VIDEOID.json \
@@ -23,7 +26,7 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Default,Arial Black,90,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,6,0,2,60,60,220,1
+Style: Default,Arial Black,68,&H0000FFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,5,0,2,60,60,220,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
