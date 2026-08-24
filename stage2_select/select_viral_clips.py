@@ -106,7 +106,7 @@ def process_directory(
     min_seconds: int = 30,
     max_seconds: int = 90,
     clips_per_video: int = 3,
-    n_ctx: int = 8192,
+    n_ctx: int = 16384,
     n_gpu_layers: int = -1,
 ):
     os.makedirs(output_dir, exist_ok=True)
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     parser.add_argument("--min-seconds", type=int, default=30)
     parser.add_argument("--max-seconds", type=int, default=90)
     parser.add_argument("--clips-per-video", type=int, default=3)
-    parser.add_argument("--n-ctx", type=int, default=8192)
+    parser.add_argument("--n-ctx", type=int, default=16384)
     parser.add_argument("--n-gpu-layers", type=int, default=-1, help="-1 = offload all layers to GPU")
     args = parser.parse_args()
 
